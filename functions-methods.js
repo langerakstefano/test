@@ -10,6 +10,7 @@
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
 function getEmailDomain () {
+    let
 
 
 }
