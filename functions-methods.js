@@ -8,11 +8,11 @@
 // getEmailDomain("n.eeken@novi-education.nl") geeft novi-education.nl
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
-
+//
 function getEmailDomain (emailaddress) {
 
-const domain = emailaddress.indexOf(  "@");
-const domainFinal = emailaddress.substring (domain +1)
+    const domain = emailaddress.indexOf(  "@");
+    const domainFinal = emailaddress.substring (domain +1)
     return domainFinal
 }
 console.log (getEmailDomain("n.eeken@novi-education.nl"))
@@ -29,26 +29,42 @@ console.log (getEmailDomain("a.wiersma@outlook.com"))
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
 function typeOfEmail (emailaddress) {
-    const domain = emailaddress.indexOf(  "@novi-education.nl");
-    if (domain === "@novi-education.nl") {
-        console.log ("Student");
-        return domain
-    }
-console.log(domain)
+    const domain = emailaddress.indexOf(  "@");
+    const domainF = emailaddress.substring (domain +1)
+
+
+    if (domainF === "novi-education.nl") {
+        return "Student";
+    } else if (domainF === "novi.nl") {
+        return "Medewerker";
+    } else { return "Extern"}
 }
+const domainOne = typeOfEmail("n.eeken@novi-education.nl")
+const domainTwo = typeOfEmail("t.mellink@novi.nl")
+const domainThree = typeOfEmail("novi.nlaapjesk@outlook.com")
+
+console.log (domainOne, domainTwo, domainThree)
+
+
+
+
+
+
+
 
 function typeOfEmail (emailaddress) {
-    const domain = emailaddress.indexOf( "@")
-    const domainFinal = emailaddress.substring (domain)
+
+    const domain = emailaddress.indexOf(  "@");
+    const domainFinal = emailaddress.substring (domain +1)
 
     switch (domainfinal) {
-        case "@novi.nl":
+        case "novi.nl":
             console.log ("medewerker");
             break;
-        case "@novi-education.nl":
+        case "novi-education.nl":
                 console.log("Student");
             break;
-        case "@outlook.com":
+        case "outlook.com":
             console.log("Extern");
             break;
 
@@ -69,3 +85,6 @@ console.log (typeOfEmail("n.eeken@novi-education.nl"))
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+
+
